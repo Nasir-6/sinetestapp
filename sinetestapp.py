@@ -4,6 +4,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 import numpy as np
 import plotly.express as px
+import pandas
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
