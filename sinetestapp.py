@@ -13,7 +13,7 @@ server = app.server     # Allows Heroku to recognise server
 
 
 app.layout = html.Div([
-    html.H2("Sin time history plot"),
+    html.H2("Updated Sin time history plot"),
 
     html.H6("Start Time"),
     dcc.Input(id='start-time', type='number', min=0, max=100, step=0.1, value=0),
