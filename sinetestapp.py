@@ -13,7 +13,7 @@ server = app.server     # Allows Heroku to recognise server
 
 
 app.layout = html.Div([
-    html.H2("Updated Sin time history plot"),
+    html.H5("Updated Sine time history plot"),
 
     html.H6("Start Time"),
     dcc.Input(id='start-time', type='number', min=0, max=100, step=0.1, value=0),
@@ -43,7 +43,12 @@ def update_output(n_clicks, tstart, tend, npoints):
     tarr = np.linspace(tstart,tend, npoints)
     y = np.sin(tarr)
 
-    fig = px.line(x=tarr, y=y)
+    fig = px.line(x=tarr, y=y,
+                  labels={
+                      "x": "Time (s)"
+                  },
+                  )
+    print(fig)
 
     output_str = "The Time array is {}, The y array is {}".format(tarr,y)
     return output_str, fig
